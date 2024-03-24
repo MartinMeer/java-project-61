@@ -1,2 +1,5 @@
-runApp:	
-	./HexletProj/java-project-61/app/build/install/app/bin/app
+run-dist:
+	./build/install/app/bin/app
+mkInstallDist:
+	./gradlew clean
+	./gradlew installDist
