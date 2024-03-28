@@ -11,8 +11,21 @@ public class Games {
     private static Random random = new Random();
     //private static int randomNumber = random.nextInt(99);
     private static Scanner scanner = new Scanner(System.in);
-    private static String conditions = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static String conditions;
 
+
+
+    public static void printConditions (String str) {
+        Cli.greeting();
+        System.out.println(str);
+    }
+    public static String checkConditions(int number) {
+        return str;
+    }
+
+    public static int checkConditions() {
+        return num
+    }
 
     public static void playEngine() {
         Cli.greeting();
