@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,7 +8,7 @@ public class EvenOdd {
 
     private static Random random = new Random();
     //private static int randomNumber = random.nextInt(99);
-    private static Scanner scanner = new Scanner(System.in);
+    //private static Scanner scanner = new Scanner(System.in);
 
 
     public static void playEvenOdd() {
@@ -14,12 +16,13 @@ public class EvenOdd {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int counter = 0;
         while (counter < 3) {
-            int randomNumber = random.nextInt(1,99);
+            int randomNumber;
+            randomNumber = random.nextInt(1,99);
             String correctAnswer = checkNumber(randomNumber);
             System.out.print("Question: " +
                     randomNumber +
                     "\nYour answer: ");
-            String userAnswer = scanner.nextLine();
+            String userAnswer = Cli.toScan();
                 if (userAnswer.equalsIgnoreCase(correctAnswer)) {
                     System.out.println("Correct!");
                     counter += 1;

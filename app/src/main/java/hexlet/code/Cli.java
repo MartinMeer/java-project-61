@@ -10,10 +10,20 @@ public class Cli {
         return userName = userName;
     }
 
+    public static void toPrint(String str){
+        System.out.println();
+    }
+     public static String toScan() {
+        return scanner.nextLine();
+     }
+    /*public static int toScan(Scanner scanner) {
+        return scanner.nextInt();
+    }*/
+
     public static void greeting() {
-        System.out.print("Welcome to the Brain Games!\n" +
+        toPrint("Welcome to the Brain Games!\n" +
                 "May I have your name? ");
-        userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        userName = toScan();
+        toPrint("Hello, " + userName + "!");
     }
 }
