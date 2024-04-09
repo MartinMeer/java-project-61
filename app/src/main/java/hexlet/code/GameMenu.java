@@ -2,27 +2,23 @@ package hexlet.code;
 
 import hexlet.code.games.EvenOdd;
 
-import java.util.Scanner;
-
 public class GameMenu {
-    private static Scanner scanner = new Scanner(System.in);
-    private static String gameMenu = "Please enter the game number and press Enter.\n" +
-            "1 - Greet\n" +
-            "2 - Even\n" +
-            "0 - Exit";
+    private static String gameMenu = """
+            Please enter the game number and press Enter.
+            1 - Greet
+            2 - Even
+            0 - Exit""";
 
-    public static void selectMenu () {
+    public static void selectMenu() {
         System.out.println(gameMenu);
         System.out.print("Your choice: ");
-        int menuPoint = (scanner.nextInt());
+        int menuPoint = Integer.parseInt((Engine.userInput()));
         switch (menuPoint) {
             case 1: Engine.greeting();
                 break;
-            case 2:
-                EvenOdd.playEvenOdd();
+            case 2: Engine.playGame(new EvenOdd());
                 break;
-            case 0:
-            break;
+            default: break;
         }
     }
 

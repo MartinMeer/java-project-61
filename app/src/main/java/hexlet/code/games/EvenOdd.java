@@ -1,52 +1,27 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
-import java.util.Random;
-import java.util.Scanner;
-public class EvenOdd {
+public class EvenOdd extends Game {
 
-    private static Random random = new Random();
-    //private static int randomNumber = random.nextInt(99);
-    private static Scanner scanner = new Scanner(System.in);
+    protected String conditions = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    protected String task;
 
 
-    public static void playEvenOdd() {
-        Cli.greeting();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int counter = 0;
-        while (counter < 3) {
-            int randomNumber = random.nextInt(1,99);
-            String correctAnswer = checkNumber(randomNumber);
-            System.out.print("Question: " +
-                    randomNumber +
-                    "\nYour answer: ");
-            String userAnswer = scanner.nextLine();
-                if (userAnswer.equalsIgnoreCase(correctAnswer)) {
-                    System.out.println("Correct!");
-                    counter += 1;
-                } else {
-                    System.out.println("'" +
-                        userAnswer +
-                        "' is wrong answer ;(. Correct answer was '" +
-                        correctAnswer +
-                        "\'.\n" +
-                        "Let's try again, " +
-                        Cli.getUserName());
-                    break;
-                }
-            System.out.println("Congratulations, " +
-                    Cli.getUserName() +
-                    "!");
-        }
 
+    public String getTask() {
+        return task;
     }
-        private static String checkNumber(int number){
-            if ((number % 2) == 0) {
-                return "yes";
-            } else {
-                return "no";
-        }
+    public String getConditions() {
+        return conditions;
+    }
+    public String makeTask() {
+        task = String.valueOf(Engine.randomizer(0, 99));
+        return task;
+    }
+    public String checkConditions() {
+        int a = Integer.parseInt(task);
+        return a % 2 != 0 ? "no" : "yes";
     }
 }
 
