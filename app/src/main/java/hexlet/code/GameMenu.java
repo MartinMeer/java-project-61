@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.EvenOdd;
+
 import java.util.Scanner;
 
 public class GameMenu {
@@ -14,7 +16,7 @@ public class GameMenu {
         System.out.print("Your choice: ");
         int menuPoint = (scanner.nextInt());
         switch (menuPoint) {
-            case 1: Cli.greeting();
+            case 1: Engine.greeting();
                 break;
             case 2:
                 EvenOdd.playEvenOdd();
