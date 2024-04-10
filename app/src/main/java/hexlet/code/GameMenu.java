@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOdd;
+import org.apache.commons.lang3.StringUtils;
 
 public class GameMenu {
     private static String gameMenu = """
@@ -14,13 +15,13 @@ public class GameMenu {
     public static void selectMenu() {
         System.out.println(gameMenu);
         System.out.print("Your choice: ");
-        int menuPoint = Integer.parseInt((Engine.userInput()));
+        String menuPoint = StringUtils.strip(Engine.userInput());
         switch (menuPoint) {
-            case 1: Engine.greeting();
+            case "1": Engine.greeting();
                 break;
-            case 2: Engine.playGame(new EvenOdd());
+            case "2": Engine.playGame(new EvenOdd());
                 break;
-            case 3: Engine.playGame(new Calculator());
+            case "3": Engine.playGame(new Calculator());
             default: break;
         }
     }
