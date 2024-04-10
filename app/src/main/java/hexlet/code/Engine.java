@@ -4,6 +4,7 @@ import hexlet.code.games.Game;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Engine {
     private static Random random = new Random();
 
@@ -35,7 +36,7 @@ public class Engine {
         int counter = 0;
         while (counter < GAME_COUNT) {
             game.makeTask();
-            String correctAnswer = game.checkConditions();
+            String correctAnswer = game.calculate();
             System.out.print("Question: "
                     + game.getTask()
                     + "\nYour answer: ");

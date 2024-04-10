@@ -17,7 +17,7 @@ public abstract class Game {
     public String makeTask() {
         return task;
     }
-    public String checkConditions() {
+    public String calculate() {
         return task;
     }
 }

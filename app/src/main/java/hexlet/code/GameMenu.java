@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOdd;
 
 public class GameMenu {
@@ -7,6 +8,7 @@ public class GameMenu {
             Please enter the game number and press Enter.
             1 - Greet
             2 - Even
+            3 - Calc
             0 - Exit""";
 
     public static void selectMenu() {
@@ -18,6 +20,7 @@ public class GameMenu {
                 break;
             case 2: Engine.playGame(new EvenOdd());
                 break;
+            case 3: Engine.playGame(new Calculator());
             default: break;
         }
     }

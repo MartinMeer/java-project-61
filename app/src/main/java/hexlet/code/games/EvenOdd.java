@@ -19,7 +19,7 @@ public class EvenOdd extends Game {
         task = String.valueOf(Engine.randomizer(0, 99));
         return task;
     }
-    public String checkConditions() {
+    public String calculate() {
         int a = Integer.parseInt(task);
         return a % 2 != 0 ? "no" : "yes";
     }
