@@ -20,7 +20,7 @@ public class Calculator extends Game {
         int a = Engine.randomizer(0, 20);
         int b = Engine.randomizer(0, 20);
         String[] operators = {"+", "-", "*"};
-        String givenOperator = operators[Engine.randomizer(0, 2)];
+        String givenOperator = operators[Engine.randomizer(0, 3)];
         task = a + " " + givenOperator + " " + b;
         return task;
     }

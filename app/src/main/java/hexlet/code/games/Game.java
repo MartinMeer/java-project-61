@@ -18,6 +18,6 @@ public abstract class Game {
         return task;
     }
     public String calculate() {
-        return task;
+        return null;
     }
 }
