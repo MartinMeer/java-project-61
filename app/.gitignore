@@ -67,4 +67,4 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 #hexlet-specific files
-.cast
+*.cast

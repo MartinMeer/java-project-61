@@ -1,9 +1,6 @@
 package hexlet.code;
 
-
-import hexlet.code.games.Game_interface;
-
-import java.util.Arrays;
+import hexlet.code.games.Game;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
@@ -11,18 +8,16 @@ import java.util.Scanner;
 
 public class Engine {
     private static Random random = new Random();
-
     private static Scanner scanner = new Scanner(System.in);
+    private static String userName;
+    private static final int GAME_COUNT = 3;
 
-    protected static String userInput() {
+    public static String userInput() {
         return scanner.nextLine();
     }
     public static int randomizer(int origin, int bound) {
         return random.nextInt(origin, bound);
     }
-
-    private static String userName;
-    private static final int GAME_COUNT = 3;
 
     public static void greeting() {
         System.out.print("Welcome to the Brain Games!\n"
@@ -31,8 +26,7 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
     }
 
-
-    public static void playGame(Game_interface game) {
+    public static void playGame(Game game) {
         greeting();
         System.out.println(game.getRules());
         int counter = 0;
@@ -50,7 +44,7 @@ public class Engine {
                         + userAnswer
                         + "' is wrong answer ;(. Correct answer was '"
                         + round[1]
-                        + "\'.\n"
+                        + "'.\n"
                         + "Let's try again, "
                         + userName);
                 return;

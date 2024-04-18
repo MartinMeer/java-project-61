@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class Calculator implements Game_interface {
+public class Calculator implements Game {
 
     @Override
     public String getRules() {
