@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOdd;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 import org.apache.commons.lang3.StringUtils;
 
 public class GameMenu {
@@ -12,6 +13,7 @@ public class GameMenu {
             2 - Even
             3 - Calc
             4 - GCD
+            5 - Progression
             0 - Exit""";
 
     public static void selectMenu() {
@@ -25,6 +27,7 @@ public class GameMenu {
                 break;
             case "3": Engine.playGame(new Calculator());
             case "4": Engine.playGame(new GCD());
+            case "5": Engine.playGame(new Progression());
             default: break;
         }
     }
