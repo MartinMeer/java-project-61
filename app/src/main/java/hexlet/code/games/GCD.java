@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.util.ArithmeticUtils;
 
-public class GCD extends Game {
+public class GCD {
     protected String conditions = "Find the greatest common divisor of given numbers.";
     protected String task;
 

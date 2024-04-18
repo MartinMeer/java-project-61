@@ -2,26 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class EvenOdd extends Game {
+public class EvenOdd implements Game_interface {
 
-    protected String conditions = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    protected String task;
-
-
-
-    public String getTask() {
-        return task;
+    @Override
+    public String getRules() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
-    public String getConditions() {
-        return conditions;
-    }
-    public String makeTask() {
-        task = String.valueOf(Engine.randomizer(0, 99));
-        return task;
-    }
-    public String calculate() {
-        int a = Integer.parseInt(task);
-        return a % 2 != 0 ? "no" : "yes";
+
+    @Override
+    public String[] generateRound() {
+        int task = Engine.randomizer(0, 99);
+        String answer = task % 2 != 0 ? "no" : "yes";
+        return new String[] {String.valueOf(task), answer};
     }
 }
 

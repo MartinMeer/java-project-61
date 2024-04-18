@@ -6,7 +6,7 @@ import hexlet.code.games.GCD;
 import org.apache.commons.lang3.StringUtils;
 
 public class GameMenu {
-    private static String gameMenu = """
+    private static final String GAME_MENU = """
             Please enter the game number and press Enter.
             1 - Greet
             2 - Even
@@ -15,7 +15,7 @@ public class GameMenu {
             0 - Exit""";
 
     public static void selectMenu() {
-        System.out.println(gameMenu);
+        System.out.println(GAME_MENU);
         System.out.print("Your choice: ");
         String menuPoint = StringUtils.strip(Engine.userInput());
         switch (menuPoint) {
@@ -24,7 +24,7 @@ public class GameMenu {
             case "2": Engine.playGame(new EvenOdd());
                 break;
             case "3": Engine.playGame(new Calculator());
-            case "4": Engine.playGame(new GCD());
+            //case "4": Engine.playGame(new GCD());
             default: break;
         }
     }
