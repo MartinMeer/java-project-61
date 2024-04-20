@@ -46,7 +46,8 @@ public class Engine {
                         + round[1]
                         + "'.\n"
                         + "Let's try again, "
-                        + userName);
+                        + userName
+                        + "!");
                 return;
             }
         }
