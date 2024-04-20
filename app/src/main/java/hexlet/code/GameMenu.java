@@ -28,9 +28,13 @@ public class GameMenu {
             case "2": Engine.playGame(new EvenOdd());
                 break;
             case "3": Engine.playGame(new Calculator());
+                break;
             case "4": Engine.playGame(new GCD());
+                break;
             case "5": Engine.playGame(new Progression());
+                break;
             case "6": Engine.playGame(new Prime());
+                break;
             default: break;
         }
     }
