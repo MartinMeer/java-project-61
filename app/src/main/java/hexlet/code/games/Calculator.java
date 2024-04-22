@@ -2,7 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class Calculator implements Game {
+public final class Calculator implements Game {
+
+    private final int[] RANDOM_ORIGINS = {0};
+    private final int[] RANDOM_BOUNDS = {20, 3};
 
     @Override
     public String getRules() {
@@ -11,10 +14,10 @@ public class Calculator implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Engine.randomizer(0, 20);
-        int b = Engine.randomizer(0, 20);
+        int a = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int b = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         String[] operators = {"+", "-", "*"};
-        String givenOperator = operators[Engine.randomizer(0, 3)];
+        String givenOperator = operators[Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[1])];
         String task = a + " " + givenOperator + " " + b;
         return switch (givenOperator) {
             case "+" -> new String[] {task, String.valueOf((a + b))};

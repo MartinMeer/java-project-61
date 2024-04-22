@@ -2,7 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class EvenOdd implements Game {
+public final class EvenOdd implements Game {
+
+    private final int[] RANDOM_ORIGINS = {0};
+    private final int[] RANDOM_BOUNDS = {99};
 
     @Override
     public String getRules() {
@@ -11,7 +14,7 @@ public class EvenOdd implements Game {
 
     @Override
     public String[] generateRound() {
-        int task = Engine.randomizer(0, 99);
+        int task = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         String answer = task % 2 != 0 ? "no" : "yes";
         return new String[] {String.valueOf(task), answer};
     }
