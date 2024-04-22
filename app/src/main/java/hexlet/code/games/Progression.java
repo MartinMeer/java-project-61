@@ -12,7 +12,7 @@ public class Progression implements Game {
 
     @Override
     public String[] generateRound() {
-        int initialTerm = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[3]);
+        int initialTerm = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[2]);
         int difference = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         int bound = Engine.randomizer(RANDOM_ORIGINS[1], RANDOM_BOUNDS[1]);
         String[] progression = new String[bound];
