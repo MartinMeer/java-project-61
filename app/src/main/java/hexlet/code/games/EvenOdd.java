@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 
 public final class EvenOdd implements Game {
 
-    private final int[] RANDOM_ORIGINS = {0};
-    private final int[] RANDOM_BOUNDS = {99};
+    private static final int[] RANDOM_ORIGINS = {0};
+    private static final int[] RANDOM_BOUNDS = {99};
 
     @Override
     public String getRules() {

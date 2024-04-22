@@ -5,8 +5,8 @@ import org.apache.commons.math3.util.ArithmeticUtils;
 
 public final class GCD implements Game {
 
-    private final int[] RANDOM_ORIGINS = {0};
-    private final int[] RANDOM_BOUNDS = {30};
+    private static final int[] RANDOM_ORIGINS = {0};
+    private static final int[] RANDOM_BOUNDS = {30};
 
     @Override
     public String getRules() {

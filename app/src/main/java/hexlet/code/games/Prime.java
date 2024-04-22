@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 import org.apache.commons.math3.primes.Primes;
 
 public final class Prime implements Game {
-    private final int[] RANDOM_ORIGINS = {2};
-    private final int[] RANDOM_BOUNDS = {20};
+    private static final int[] RANDOM_ORIGINS = {2};
+    private static final int[] RANDOM_BOUNDS = {20};
     @Override
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";

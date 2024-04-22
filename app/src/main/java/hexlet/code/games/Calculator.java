@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 
 public final class Calculator implements Game {
 
-    private final int[] RANDOM_ORIGINS = {0};
-    private final int[] RANDOM_BOUNDS = {20, 3};
+    private static final int[] RANDOM_ORIGINS = {0};
+    private static final int[] RANDOM_BOUNDS = {20, 3};
 
     @Override
     public String getRules() {
