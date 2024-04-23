@@ -1,6 +1,8 @@
 package hexlet.code;
 
 import hexlet.code.games.Game;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
@@ -36,7 +38,7 @@ public class Engine {
                     + round[0]
                     + "\nYour answer: ");
             String userAnswer = scanner.nextLine();
-            if (Objects.equals(userAnswer, round[1])) {
+            if (StringUtils.equalsIgnoreCase(userAnswer, round[1])) {
                 System.out.println("Correct!");
                 counter += 1;
             } else {
