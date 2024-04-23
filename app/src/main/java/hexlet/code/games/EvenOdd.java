@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import org.apache.commons.lang3.StringUtils;
 
 public final class EvenOdd implements Game {
 
