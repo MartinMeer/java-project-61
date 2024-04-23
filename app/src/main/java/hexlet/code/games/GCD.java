@@ -5,7 +5,7 @@ import org.apache.commons.math3.util.ArithmeticUtils;
 
 public final class GCD implements Game {
 
-    private static final int[] RANDOM_ORIGINS = {0};
+    private static final int[] RANDOM_ORIGINS = {1};
     private static final int[] RANDOM_BOUNDS = {30};
 
     @Override
