@@ -2,8 +2,6 @@ package hexlet.code;
 
 import hexlet.code.games.Game;
 import org.apache.commons.lang3.StringUtils;
-
-import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
