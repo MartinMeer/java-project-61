@@ -38,8 +38,4 @@ public class GameMenu {
             default: break;
         }
     }
-
-
-
-
 }
