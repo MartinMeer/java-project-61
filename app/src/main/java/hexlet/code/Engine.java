@@ -10,7 +10,6 @@ public class Engine {
     private static final int GAME_COUNT = 3;
 
     public static void playGame(Game game) {
-        Cli.greeting();
         String userName = Cli.greeting();
         System.out.println(game.getRules());
         for (int i = 0; i < GAME_COUNT; i++) {
