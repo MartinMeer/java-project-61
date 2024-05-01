@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Utils;
 import org.apache.commons.math3.primes.Primes;
 
 public final class Prime implements Game {
@@ -13,7 +13,7 @@ public final class Prime implements Game {
 
     @Override
     public String[] generateRound() {
-        String task = String.valueOf(Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]));
+        String task = String.valueOf(Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]));
         String answer = (Primes.isPrime(Integer.parseInt(task))) ? "yes" : "no";
         return new String[]{task, answer};
     }

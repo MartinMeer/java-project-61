@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class EvenOdd implements Game {
 
@@ -14,7 +14,7 @@ public final class EvenOdd implements Game {
 
     @Override
     public String[] generateRound() {
-        int task = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int task = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         String answer = task % 2 != 0 ? "no" : "yes";
         return new String[] {String.valueOf(task), answer};
     }

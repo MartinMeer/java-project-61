@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class Progression implements Game {
     private static final int[] RANDOM_ORIGINS = {1, 5};
@@ -12,9 +12,9 @@ public final class Progression implements Game {
 
     @Override
     public String[] generateRound() {
-        int initialTerm = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[2]);
-        int difference = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
-        int bound = Engine.randomizer(RANDOM_ORIGINS[1], RANDOM_BOUNDS[1]);
+        int initialTerm = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[2]);
+        int difference = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int bound = Utils.randomizer(RANDOM_ORIGINS[1], RANDOM_BOUNDS[1]);
         String[] progression = new String[bound];
         int currentTerm = initialTerm;
         for (int i = 1; i < bound; i++) {
@@ -22,7 +22,7 @@ public final class Progression implements Game {
             currentTerm += difference;
             progression[i] = String.valueOf(currentTerm);
         }
-        String answer = progression[Engine.randomizer(RANDOM_ORIGINS[0], bound - 1)];
+        String answer = progression[Utils.randomizer(RANDOM_ORIGINS[0], bound - 1)];
         String[] rawTask = new String[bound];
         for (int i = 0; i < bound; i++) {
             if (progression[i].equals(answer)) {

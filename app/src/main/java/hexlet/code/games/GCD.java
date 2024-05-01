@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Utils;
 import org.apache.commons.math3.util.ArithmeticUtils;
 
 public final class GCD implements Game {
@@ -15,8 +15,8 @@ public final class GCD implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
-        int b = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int a = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int b = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         String task = a + " " + b;
         return new String[] {task, String.valueOf(ArithmeticUtils.gcd(a, b))};
     }

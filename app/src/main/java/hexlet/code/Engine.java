@@ -2,48 +2,27 @@ package hexlet.code;
 
 import hexlet.code.games.Game;
 import org.apache.commons.lang3.StringUtils;
-import java.util.Random;
-import java.util.Scanner;
-
 
 public class Engine {
-    private static Random random = new Random();
-    private static Scanner scanner = new Scanner(System.in);
-    private static String userName;
     private static final int GAME_COUNT = 3;
 
-    public static String userInput() {
-        return scanner.nextLine();
-    }
-    public static int randomizer(int origin, int bound) {
-        return random.nextInt(origin, bound);
-    }
-
-    public static void greeting() {
-        System.out.print("Welcome to the Brain Games!\n"
-                + "May I have your name? ");
-        userName = userInput();
-        System.out.println("Hello, " + userName + "!");
-    }
-
     public static void playGame(Game game) {
-        greeting();
+        Cli.greeting();
+        String userName = Cli.getUserName();
         System.out.println(game.getRules());
-        int counter = 0;
-        while (counter < GAME_COUNT) {
+        for (int i = 0; i < GAME_COUNT; i++) {
             String[] round = game.generateRound();
             System.out.print("Question: "
                     + round[0]
                     + "\nYour answer: ");
-            String userAnswer = scanner.nextLine();
+            String userAnswer = Cli.userInput();
             if (StringUtils.equalsIgnoreCase(userAnswer, round[1])) {
                 System.out.println("Correct!");
-                counter += 1;
             } else {
                 System.out.println("'"
                         + userAnswer
                         + "' is wrong answer ;(. Correct answer was '"
-                        + round[1]
+                       + round[1]
                         + "'.\n"
                         + "Let's try again, "
                         + userName

@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class Calculator implements Game {
 
@@ -14,10 +14,10 @@ public final class Calculator implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
-        int b = Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int a = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int b = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
         String[] operators = {"+", "-", "*"};
-        String givenOperator = operators[Engine.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[1])];
+        String givenOperator = operators[Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[1])];
         String task = a + " " + givenOperator + " " + b;
         return switch (givenOperator) {
             case "+" -> new String[] {task, String.valueOf((a + b))};
