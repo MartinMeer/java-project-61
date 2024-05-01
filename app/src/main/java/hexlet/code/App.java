@@ -7,8 +7,11 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         final String gameMenu = """
             Please enter the game number and press Enter.
             1 - Greet
@@ -21,7 +24,7 @@ public class App {
 
         System.out.println(gameMenu);
         System.out.print("Your choice: ");
-        String menuPoint = StringUtils.strip(Cli.userInput());
+        String menuPoint = StringUtils.strip(scanner.nextLine());
         switch (menuPoint) {
             case "1": Cli.greeting();
                 break;

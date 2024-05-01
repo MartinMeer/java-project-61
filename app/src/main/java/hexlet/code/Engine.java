@@ -3,26 +3,29 @@ package hexlet.code;
 import hexlet.code.games.Game;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Scanner;
+
 public class Engine {
+    private static Scanner scanner = new Scanner(System.in);
     private static final int GAME_COUNT = 3;
 
     public static void playGame(Game game) {
         Cli.greeting();
-        String userName = Cli.getUserName();
+        String userName = Cli.greeting();
         System.out.println(game.getRules());
         for (int i = 0; i < GAME_COUNT; i++) {
             String[] round = game.generateRound();
             System.out.print("Question: "
                     + round[0]
                     + "\nYour answer: ");
-            String userAnswer = Cli.userInput();
+            String userAnswer = scanner.nextLine();
             if (StringUtils.equalsIgnoreCase(userAnswer, round[1])) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'"
                         + userAnswer
                         + "' is wrong answer ;(. Correct answer was '"
-                       + round[1]
+                        + round[1]
                         + "'.\n"
                         + "Let's try again, "
                         + userName
