@@ -10,11 +10,11 @@ public final class Prime implements Game {
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
-
+    /*лучше сохранить в интовую переменную значение, чтоб потом опять его из строки к числу не парсить*/
     @Override
     public String[] generateRound() {
-        String task = String.valueOf(Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]));
-        String answer = (Primes.isPrime(Integer.parseInt(task))) ? "yes" : "no";
-        return new String[]{task, answer};
+        int task = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        String answer = (Primes.isPrime(task)) ? "yes" : "no";
+        return new String[]{String.valueOf(task), answer};
     }
 }

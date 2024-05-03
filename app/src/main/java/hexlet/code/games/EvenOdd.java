@@ -12,10 +12,14 @@ public final class EvenOdd implements Game {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
+    private boolean isEven(int number) {
+        int a = number % 2;
+        return a == 0;
+    }
     @Override
     public String[] generateRound() {
         int task = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
-        String answer = task % 2 != 0 ? "no" : "yes";
+        String answer = isEven(task) ? "yes" : "no";
         return new String[] {String.valueOf(task), answer};
     }
 }
