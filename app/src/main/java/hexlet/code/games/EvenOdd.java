@@ -4,8 +4,8 @@ import hexlet.code.Utils;
 
 public final class EvenOdd implements Game {
 
-    private static final int[] RANDOM_ORIGINS = {0};
-    private static final int[] RANDOM_BOUNDS = {99};
+    private static final int[] RANDOM_ORIGIN = {0};
+    private static final int[] RANDOM_BOUND = {99};
 
     @Override
     public String getRules() {
@@ -18,7 +18,7 @@ public final class EvenOdd implements Game {
     }
     @Override
     public String[] generateRound() {
-        int task = Utils.randomizer(RANDOM_ORIGINS[0], RANDOM_BOUNDS[0]);
+        int task = Utils.randomizer(RANDOM_ORIGIN[0], RANDOM_BOUND[0]);
         String answer = isEven(task) ? "yes" : "no";
         return new String[] {String.valueOf(task), answer};
     }

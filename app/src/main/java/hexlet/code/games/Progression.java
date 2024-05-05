@@ -1,14 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Arrays;
 
 public final class Progression implements Game {
     private static final int[] RANDOM_ORIGINS = {1, 5};
     private static final int[] RANDOM_BOUNDS = {9, 11, 30};
-    
+
     @Override
     public String getRules() {
         return "What number is missing in the progression?";
