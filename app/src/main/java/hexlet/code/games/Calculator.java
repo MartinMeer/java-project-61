@@ -8,6 +8,9 @@ public final class Calculator implements Game {
     public String getRules() {
         return "What is the result of the expression?";
     }
+    private static final int RANDOM_ORIGIN = 0;
+    private static final int RANDOM_BOUND_FOR_OPERANDS = 20;
+    private static final int RANDOM_BOUND_FOR_OPERATORS = 3;
 
     //для вычисления значения выражения тоже лучше сделать отдельный метод
 
@@ -35,13 +38,10 @@ public final class Calculator implements Game {
 
     @Override
     public String[] generateRound() {
-        int randomOrigin = 0;
-        int randomBoundForOperands = 20;
-        int randomBoundForOperators = 3;
-        int a = Utils.randomizer(randomOrigin, randomBoundForOperands);
-        int b = Utils.randomizer(randomOrigin, randomBoundForOperands);
+        int a = Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERANDS);
+        int b = Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERANDS);
         String[] operators = {"+", "-", "*"};
-        String givenOperator = operators[Utils.randomizer(randomOrigin, randomBoundForOperators)];
+        String givenOperator = operators[Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERATORS)];
         String task = a + " " + givenOperator + " " + b;
         String answer = String.valueOf(calculation(task));
         return new String[] {task, answer};
