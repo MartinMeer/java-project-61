@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Utils;
 
 public final class Progression implements Game {
-    private static final int[] RANDOM_ORIGINS = {1, 5};
     private static final int RANDOM_ORIGIN_FOR_INITIAL_TERM = 1;
     private static final int RANDOM_BOUND_FOR_INITIAL_TERM = 30;
     private static final int RANDOM_ORIGIN_FOR_DIFFERENCE = 1;
@@ -11,7 +10,7 @@ public final class Progression implements Game {
     private static final int RANDOM_ORIGIN_PROGRESSION_LENGTH = 5;
     private static final int RANDOM_BOUND_PROGRESSION_LENGTH = 11;
     private static final int RANDOM_ORIGIN_FOR_ANSWER_INDEX = 1;
-    private static final int[] RANDOM_BOUNDS = {9, 11, 30};
+
 
     @Override
     public String getRules() {
