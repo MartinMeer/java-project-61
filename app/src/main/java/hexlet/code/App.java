@@ -26,7 +26,7 @@ public class App {
         System.out.print("Your choice: ");
         String menuPoint = StringUtils.strip(scanner.nextLine());
         switch (menuPoint) {
-            case "1": Cli.greeting();
+            case "1": Cli.greet();
                 break;
             case "2": Engine.playGame(new EvenOdd());
                 break;

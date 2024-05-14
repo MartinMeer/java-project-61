@@ -8,18 +8,17 @@ public final class Calculator implements Game {
     public String getRules() {
         return "What is the result of the expression?";
     }
-    private static final int RANDOM_ORIGIN = 0;
-    private static final int RANDOM_BOUND_FOR_OPERANDS = 20;
-    private static final int RANDOM_BOUND_FOR_OPERATORS = 3;
+    private static final int OPERANDS_BOTTOM_LIMIT = 0;
+    private static final int OPERANDS_TOP_LIMIT = 20;
+    private static final int BOTTOM_LIMIT_FOR_OPERATORS = 0; //FOR - чтобы не путаться при подстановке
+    private static final String[] OPERATORS = {"+", "-", "*"};
 
-    //для вычисления значения выражения тоже лучше сделать отдельный метод
 
     private int calculation(String expression) {
         String[] splittedExpression = StringUtils.split(expression, " ");
         int a = Integer.parseInt(splittedExpression[0]);
         int b = Integer.parseInt(splittedExpression[2]);
         String operator = splittedExpression[1];
-        int result;
         switch (operator) {
             case "+" -> {
                 return a + b;
@@ -38,10 +37,9 @@ public final class Calculator implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERANDS);
-        int b = Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERANDS);
-        String[] operators = {"+", "-", "*"};
-        String givenOperator = operators[Utils.randomizer(RANDOM_ORIGIN, RANDOM_BOUND_FOR_OPERATORS)];
+        int a = Utils.randomizer(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
+        int b = Utils.randomizer(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
+        String givenOperator = OPERATORS[Utils.randomizer(BOTTOM_LIMIT_FOR_OPERATORS, OPERATORS.length)];
         String task = a + " " + givenOperator + " " + b;
         String answer = String.valueOf(calculation(task));
         return new String[] {task, answer};
