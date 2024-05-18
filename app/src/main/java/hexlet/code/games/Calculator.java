@@ -30,7 +30,7 @@ public final class Calculator implements Game {
                 return a * b;
             }
             default -> {
-                return 0;
+                throw new RuntimeException("This operation is not realized!");
             }
         }
     }
