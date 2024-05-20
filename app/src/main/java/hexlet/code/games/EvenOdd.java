@@ -18,7 +18,7 @@ public final class EvenOdd implements Game {
     }
     @Override
     public String[] generateRound() {
-        int task = Utils.randomizer(TASK_BOTTOM_LIMIT, TASK_TOP_LIMIT);
+        int task = Utils.generateNumber(TASK_BOTTOM_LIMIT, TASK_TOP_LIMIT);
         String answer = isEven(task) ? "yes" : "no";
         return new String[] {String.valueOf(task), answer};
     }

@@ -12,7 +12,7 @@ public final class Prime implements Game {
     }
     @Override
     public String[] generateRound() {
-        int task = Utils.randomizer(TASK_BOTTOM_LIMIT, TASK_TOP_LIMIT);
+        int task = Utils.generateNumber(TASK_BOTTOM_LIMIT, TASK_TOP_LIMIT);
         String answer = (Primes.isPrime(task)) ? "yes" : "no";
         return new String[]{String.valueOf(task), answer};
     }

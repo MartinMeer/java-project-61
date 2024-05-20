@@ -15,8 +15,8 @@ public final class GCD implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Utils.randomizer(NUMBERS_BOTTOM_LIMIT, NUMBERS_TOP_LIMIT);
-        int b = Utils.randomizer(NUMBERS_BOTTOM_LIMIT, NUMBERS_TOP_LIMIT);
+        int a = Utils.generateNumber(NUMBERS_BOTTOM_LIMIT, NUMBERS_TOP_LIMIT);
+        int b = Utils.generateNumber(NUMBERS_BOTTOM_LIMIT, NUMBERS_TOP_LIMIT);
         String task = a + " " + b;
         return new String[] {task, String.valueOf(ArithmeticUtils.gcd(a, b))};
     }

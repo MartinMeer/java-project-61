@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Engine {
     private static Scanner scanner = new Scanner(System.in);
-    private static final int GAME_COUNT = 3;
+    private static final int ROUNDS_COUNT = 3;
 
     public static void playGame(Game game) {
         String userName = Cli.greet();
         System.out.println(game.getRules());
-        for (int i = 0; i < GAME_COUNT; i++) {
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
             String[] round = game.generateRound();
             System.out.print("Question: "
                     + round[0]

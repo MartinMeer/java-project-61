@@ -20,8 +20,8 @@ public final class Progression implements Game {
     private static String[] generateProgression(int initialTerm, int difference, int progressionLength) {
         String[] progression = new String[progressionLength];
         int currentTerm = initialTerm;
+        progression[0] = String.valueOf(initialTerm);
         for (int i = 1; i < progressionLength; i++) {
-            progression[0] = String.valueOf(initialTerm);
             currentTerm += difference;
             progression[i] = String.valueOf(currentTerm);
         }
@@ -30,11 +30,11 @@ public final class Progression implements Game {
 
     @Override
     public String[] generateRound() {
-        int initialTerm = Utils.randomizer(INITIAL_TERM_BOTTOM_LIMIT, INITIAL_TERM_TOP_LIMIT);
-        int difference = Utils.randomizer(DIFFERENCE_BOTTOM_LIMIT, DIFFERENCE_TOP_LIMIT);
-        int progressionLength = Utils.randomizer(PROGRESSION_LENGTH_BOTTOM_LIMIT, PROGRESSION_LENGTH_TOP_LIMIT);
+        int initialTerm = Utils.generateNumber(INITIAL_TERM_BOTTOM_LIMIT, INITIAL_TERM_TOP_LIMIT);
+        int difference = Utils.generateNumber(DIFFERENCE_BOTTOM_LIMIT, DIFFERENCE_TOP_LIMIT);
+        int progressionLength = Utils.generateNumber(PROGRESSION_LENGTH_BOTTOM_LIMIT, PROGRESSION_LENGTH_TOP_LIMIT);
         String[] progression = generateProgression(initialTerm, difference, progressionLength);
-        int indexOfAnswer = Utils.randomizer(ANSWER_INDEX_BOTTOM_LIMIT, progressionLength - 1);
+        int indexOfAnswer = Utils.generateNumber(ANSWER_INDEX_BOTTOM_LIMIT, progressionLength - 1);
         String answer = progression[indexOfAnswer];
         progression[indexOfAnswer] = "..";
         String task = String.join(" ", progression);

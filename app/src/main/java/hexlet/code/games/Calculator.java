@@ -37,9 +37,9 @@ public final class Calculator implements Game {
 
     @Override
     public String[] generateRound() {
-        int a = Utils.randomizer(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
-        int b = Utils.randomizer(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
-        String givenOperator = OPERATORS[Utils.randomizer(BOTTOM_LIMIT_FOR_OPERATORS, OPERATORS.length)];
+        int a = Utils.generateNumber(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
+        int b = Utils.generateNumber(OPERANDS_BOTTOM_LIMIT, OPERANDS_TOP_LIMIT);
+        String givenOperator = OPERATORS[Utils.generateNumber(BOTTOM_LIMIT_FOR_OPERATORS, OPERATORS.length)];
         String task = a + " " + givenOperator + " " + b;
         String answer = String.valueOf(calculation(task));
         return new String[] {task, answer};
