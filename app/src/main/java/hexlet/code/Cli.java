@@ -1,15 +1,55 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
+import hexlet.code.games.EvenOdd;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Scanner;
 
-public class Cli {
-    private static final Scanner SCANNER = new Scanner(System.in);
+import static picocli.CommandLine.*;
 
-    public static String  greet() {
-        System.out.print("Welcome to the Brain Games!\n"
-                + "May I have your name? ");
-        String userName = SCANNER.nextLine();
-        System.out.println("Hello, " + userName + "!");
-        return userName;
+@Command(name = "app", mixinStandardHelpOptions = true, version = "app 2.0",
+        description = "Let's Game with your Brain!")
+public class Cli implements Runnable {
+
+
+    @Override
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        final String gameMenu = """
+            Please enter the game number and press Enter.
+            1 - Greet
+            2 - Even
+            3 - Calc
+            4 - GCD
+            5 - Progression
+            6 - Prime
+            0 - Exit""";
+
+
+        System.out.println(gameMenu);
+
+        System.out.print("Your choice: ");
+        String menuPoint = StringUtils.strip(scanner.nextLine());
+        switch (menuPoint) {
+            case "1": Greeting.greet();
+                break;
+            case "2": Engine.playGame(new EvenOdd());
+                break;
+            case "3": Engine.playGame(new Calculator());
+                break;
+            case "4": Engine.playGame(new GCD());
+                break;
+            case "5": Engine.playGame(new Progression());
+                break;
+            case "6": Engine.playGame(new Prime());
+                break;
+            default: break;
+        }
+
+
     }
 }

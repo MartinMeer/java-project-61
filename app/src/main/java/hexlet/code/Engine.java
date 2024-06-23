@@ -10,7 +10,7 @@ public class Engine {
     private static final int ROUNDS_COUNT = 3;
 
     public static void playGame(Game game) {
-        String userName = Cli.greet();
+        String userName = Greeting.greet();
         System.out.println(game.getRules());
         for (int i = 0; i < ROUNDS_COUNT; i++) {
             String[] round = game.generateRound();
