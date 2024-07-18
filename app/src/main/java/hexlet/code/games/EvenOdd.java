@@ -13,12 +13,19 @@ public final class EvenOdd implements Game {
     }
 
     private boolean isEven(int number) {
-        int a = number % 2;
-        return a == 0;
+        IsEvenFunction ief = new IsEvenFunction() {
+            @Override
+            public boolean checkIsEven() {
+                return number % 2 == 0;
+            }
+        }
     }
+
+
     @Override
     public String[] generateRound() {
         int task = Utils.generateNumber(TASK_BOTTOM_LIMIT, TASK_TOP_LIMIT);
+
         String answer = isEven(task) ? "yes" : "no";
         return new String[] {String.valueOf(task), answer};
     }
