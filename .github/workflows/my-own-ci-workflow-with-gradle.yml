@@ -49,7 +49,7 @@ jobs:
     - run: echo "The current Gradle version was ${{ steps.setup-gradle.outputs.gradle-version }}"
     
 
-    - name: Build with Gradle Wrapper
+    #- name: Build with Gradle Wrapper
     - run: ./gradlew test
     
     - name: Snyk
