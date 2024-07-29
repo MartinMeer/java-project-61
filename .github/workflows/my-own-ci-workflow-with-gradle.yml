@@ -52,7 +52,7 @@ jobs:
     - name: Build with Gradle Wrapper
     - run: ./gradlew test
     
-    - name: Run Snyk to check for vulnerabilities
+    - name: Snyk
     # You may pin to the exact commit or the version.
       uses: snyk/actions/gradle-jdk17@master  
   # uses: snyk/actions@b98d498629f1c368650224d6d212bf7dfa89e4bf
