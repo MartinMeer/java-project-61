@@ -34,6 +34,10 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
+        cache: 'gradle'
+        #cache-dependency-path: | # optional
+          #sub-project/*.gradle*
+          #sub-project/**/gradle-wrapper.properties
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
@@ -47,7 +51,27 @@ jobs:
     
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew test
+    - run: ./gradlew test
+    
+    - name: Snyk
+  # You may pin to the exact commit or the version.
+  # uses: snyk/actions@b98d498629f1c368650224d6d212bf7dfa89e4bf
+      uses: snyk/actions@0.4.0
+      #with:
+    # Which Snyk command to run, defaults to test
+        #command: # optional, default is test
+    # Additional arguments to pass to Snyk
+        #args: # optional
+    # Output a snyk.json file with results if running the test command
+        #json: # optional
+          
+
+    
+    
+
+
+
+    
     #- run: echo "Build was sucsessful!"
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
