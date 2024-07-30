@@ -22,8 +22,7 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      
+      contents: read      
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -62,11 +61,9 @@ jobs:
     #   run: gradle build
 
   dependency-submission:
-
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
