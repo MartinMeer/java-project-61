@@ -34,8 +34,7 @@ jobs:
         gradle-version: current
     
     - run: gradle build --dry-run
-    - run: echo "The current Gradle version was ${{
-          steps.setup-gradle.outputs.gradle-version }}"
+    - run: echo "The current Gradle version was ${{ steps.setup-gradle.outputs.gradle-version }}"
           
     - name: Test with Gradle Wrapper
     - run: ./gradlew test
