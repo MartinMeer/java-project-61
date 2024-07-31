@@ -9,44 +9,47 @@ name: Java CI with Gradle
 run-name: ${{ github.actor }}'s own workflow Java CI with Gradle
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
-
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read      
+      contents: read
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: 'gradle'
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: temurin
+          cache: gradle
+          
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5
+        id: setup-gradle
+        with:
+          gradle-version: current
+          
+      - run: gradle build --dry-run
+      - run: echo "The current Gradle version was ${{
+          steps.setup-gradle.outputs.gradle-version }}"
+          
+      - name: Build with Gradle Wrapper
+      - run: ./gradlew test
+      - run: echo "Build was sucsessful!"
         #cache-dependency-path: | # optional
           #sub-project/*.gradle*
           #sub-project/**/gradle-wrapper.properties
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
-      id: setup-gradle
-      with:
-        gradle-version: current
-    - run: gradle build --dry-run # just test build configuration
-    - run: echo "The current Gradle version was ${{ steps.setup-gradle.outputs.gradle-version }}"    
-
-    - name: Build with Gradle Wrapper
-    - run: ./gradlew test    
-    - run: echo "Build was sucsessful!"
-
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
-    #
+    
     # - name: Setup Gradle
     #   uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
     #   with:
@@ -60,16 +63,18 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: temurin
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5
+
     # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
     # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
-    - name: Generate and submit dependency graph
-      uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+    
 
 #run-on multiOS
        #runs-on: ${{ matrix.os }}
